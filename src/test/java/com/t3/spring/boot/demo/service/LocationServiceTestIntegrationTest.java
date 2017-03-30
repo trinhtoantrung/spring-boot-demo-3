@@ -1,11 +1,13 @@
 
 package com.t3.spring.boot.demo.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.t3.spring.boot.demo.DemoApplication;
 import com.t3.spring.boot.demo.entity.Location;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -34,6 +36,20 @@ public class LocationServiceTestIntegrationTest {
     newLocation.setCountry("Vietnam");
 
     Location returnedLocation = locationService.save(newLocation);
+    System.out.println(returnedLocation.getId() +
+                      " - " + returnedLocation.getCountry() +
+                      " - " + returnedLocation.getState());
+
     assertNotNull(returnedLocation.getId());
+  }
+
+  @Test
+  public void testFind() throws Exception {
+    Location location = locationService.find(1L);
+    System.out.println(location.getId() +
+                      " - " + location.getCountry() +
+                      " - " + location.getState());
+
+    assertNotNull(location);
   }
 }

@@ -26,4 +26,9 @@ public class LocationServiceImpl implements LocationService {
   public Location save(Location location) {
     return locationRepository.save(location);
   }
+
+  @Override
+  public Location find(Long id) {
+    return locationRepository.find(id);
+  }
 }

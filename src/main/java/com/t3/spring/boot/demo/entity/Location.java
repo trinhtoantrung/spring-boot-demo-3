@@ -1,9 +1,8 @@
 package com.t3.spring.boot.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Creation of spring-boot-demo-3.
@@ -23,6 +22,9 @@ public class Location {
 
   private String state;
   private String country;
+
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "location")
+  private List<Manufacturer> manufacturers = new ArrayList<Manufacturer>();
 
   public Location() {
   }
@@ -49,5 +51,13 @@ public class Location {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  public List<Manufacturer> getManufacturers() {
+    return manufacturers;
+  }
+
+  public void setManufacturers(List<Manufacturer> manufacturers) {
+    this.manufacturers = manufacturers;
   }
 }

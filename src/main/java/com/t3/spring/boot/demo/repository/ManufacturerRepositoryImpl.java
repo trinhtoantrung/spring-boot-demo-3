@@ -1,6 +1,6 @@
 package com.t3.spring.boot.demo.repository;
 
-import com.t3.spring.boot.demo.entity.Location;
+import com.t3.spring.boot.demo.entity.Manufacturer;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -10,27 +10,22 @@ import javax.persistence.PersistenceContext;
  * Creation of spring-boot-demo-3.
  * <p/>
  * Created by tttrinh
- * Created date 3/29/17 3:22 PM
+ * Created date 3/30/17 1:54 PM
  * <p/>
  * $Revision:  $ $Date:  $
  * $Log: ,v $
  */
 
 @Repository
-public class LocationRepositoryImpl implements LocationRepository {
+public class ManufacturerRepositoryImpl implements ManufacturerRepository{
 
   @PersistenceContext
   EntityManager em;
 
   @Override
-  public Location save(Location location) {
-    em.persist(location);
+  public Manufacturer save(Manufacturer manufacturer) {
+    em.persist(manufacturer);
     em.flush();
-    return location;
-  }
-
-  @Override
-  public Location find(Long id) {
-    return em.find(Location.class, id);
+    return manufacturer;
   }
 }

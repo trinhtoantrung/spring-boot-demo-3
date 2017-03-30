@@ -13,4 +13,5 @@ import com.t3.spring.boot.demo.entity.Location;
  */
 public interface LocationService {
   Location save(Location location);
+  Location find(Long id);
 }
