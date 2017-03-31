@@ -1,13 +1,11 @@
 
 package com.t3.spring.boot.demo.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.t3.spring.boot.demo.DemoApplication;
 import com.t3.spring.boot.demo.entity.Location;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
