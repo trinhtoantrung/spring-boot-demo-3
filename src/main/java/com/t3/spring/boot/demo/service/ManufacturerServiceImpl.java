@@ -27,4 +27,9 @@ public class ManufacturerServiceImpl implements ManufacturerService {
   public Manufacturer save(Manufacturer manufacturer) {
     return manufacturerRepository.save(manufacturer);
   }
+
+  @Override
+  public Manufacturer find(Long id) {
+    return manufacturerRepository.find(id);
+  }
 }

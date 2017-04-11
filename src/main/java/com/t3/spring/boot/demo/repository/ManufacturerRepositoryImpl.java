@@ -28,4 +28,9 @@ public class ManufacturerRepositoryImpl implements ManufacturerRepository{
     em.flush();
     return manufacturer;
   }
+
+  @Override
+  public Manufacturer find(Long id) {
+    return em.find(Manufacturer.class, id);
+  }
 }

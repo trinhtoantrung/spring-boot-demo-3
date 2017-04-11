@@ -12,5 +12,6 @@ import com.t3.spring.boot.demo.entity.Manufacturer;
  * $Log: ,v $
  */
 public interface ManufacturerService {
-  public Manufacturer save(Manufacturer manufacturer);
+  Manufacturer save(Manufacturer manufacturer);
+  Manufacturer find(Long id);
 }

@@ -13,4 +13,6 @@ import com.t3.spring.boot.demo.entity.Manufacturer;
  */
 public interface ManufacturerRepository {
   Manufacturer save(Manufacturer manufacturer);
+
+  Manufacturer find(Long id);
 }
