@@ -1,6 +1,7 @@
 package com.t3.spring.boot.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -31,7 +32,7 @@ public class Manufacturer {
 
   @ManyToOne
   @JoinColumn(name = "location_id")
-  @JsonBackReference
+  @JsonManagedReference
   private Location location;
 
   public Manufacturer() {
