@@ -1,8 +1,5 @@
 package com.t3.spring.boot.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
