@@ -1,6 +1,7 @@
 package com.t3.spring.boot.demo.service;
 
 import com.t3.spring.boot.demo.entity.Manufacturer;
+import com.t3.spring.boot.demo.projection.ManufacturerProjection;
 import com.t3.spring.boot.demo.repository.ManufacturerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,10 @@ public class ManufacturerServiceImpl implements ManufacturerService {
   @Override
   public Manufacturer find(Long id) {
     return manufacturerRepository.find(id);
+  }
+
+  @Override
+  public ManufacturerProjection findAndView(Long id) {
+    return manufacturerRepository.findAndView(id);
   }
 }

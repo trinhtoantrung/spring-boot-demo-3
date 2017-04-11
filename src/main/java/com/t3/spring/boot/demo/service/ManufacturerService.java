@@ -1,6 +1,7 @@
 package com.t3.spring.boot.demo.service;
 
 import com.t3.spring.boot.demo.entity.Manufacturer;
+import com.t3.spring.boot.demo.projection.ManufacturerProjection;
 
 /**
  * Creation of spring-boot-demo-3.
@@ -14,4 +15,6 @@ import com.t3.spring.boot.demo.entity.Manufacturer;
 public interface ManufacturerService {
   Manufacturer save(Manufacturer manufacturer);
   Manufacturer find(Long id);
+
+  ManufacturerProjection findAndView(Long id);
 }

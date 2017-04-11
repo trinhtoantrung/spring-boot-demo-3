@@ -1,10 +1,12 @@
 package com.t3.spring.boot.demo.repository;
 
 import com.t3.spring.boot.demo.entity.Manufacturer;
+import com.t3.spring.boot.demo.projection.ManufacturerProjection;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  * Creation of spring-boot-demo-3.
@@ -32,5 +34,15 @@ public class ManufacturerRepositoryImpl implements ManufacturerRepository{
   @Override
   public Manufacturer find(Long id) {
     return em.find(Manufacturer.class, id);
+  }
+
+  @Override
+  public ManufacturerProjection findAndView(Long id) {
+    Query jpql = em.createQuery("SELECT NEW com.t3.spring.boot.demo.projection.ManufacturerProjection(" +
+                                "m.name, m.active, l.state, l.country) " +
+                                "FROM Manufacturer m, Location l " +
+                                "WHERE m.location.id = l.id and m.id = :id");
+    jpql.setParameter("id", id);
+    return (ManufacturerProjection) jpql.getSingleResult();
   }
 }

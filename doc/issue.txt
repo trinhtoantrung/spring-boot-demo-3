@@ -1,0 +1,3 @@
+Problem when using LAZY FETCH
+1. fail_on_empty_beans
+2. "handler", "hibernateLazyInitializer" in response

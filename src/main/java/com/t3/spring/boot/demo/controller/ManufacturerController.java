@@ -2,6 +2,7 @@ package com.t3.spring.boot.demo.controller;
 
 import com.t3.spring.boot.demo.entity.Location;
 import com.t3.spring.boot.demo.entity.Manufacturer;
+import com.t3.spring.boot.demo.projection.ManufacturerProjection;
 import com.t3.spring.boot.demo.service.ManufacturerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,11 @@ public class ManufacturerController {
   @RequestMapping(value = "manufacturer/{id}", method = RequestMethod.GET)
   public Manufacturer find(@PathVariable Long id) {
     return manufacturerService.find(id);
+  }
+
+  @RequestMapping(value = "manufacturer/{id}/view", method = RequestMethod.GET)
+  public ManufacturerProjection findAndView(@PathVariable Long id) {
+    return manufacturerService.findAndView(id);
   }
 
   @RequestMapping(value = "manufacturer/{id}/location", method = RequestMethod.GET)
