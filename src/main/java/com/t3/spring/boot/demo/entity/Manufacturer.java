@@ -32,7 +32,6 @@ public class Manufacturer {
 
   @ManyToOne
   @JoinColumn(name = "location_id")
-  @JsonManagedReference
   private Location location;
 
   public Manufacturer() {
